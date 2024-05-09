@@ -7,5 +7,6 @@ GOPROXY=https://goproxy.cn
 ```bash
 git add .
 git commit -m "daily commit"
-
+git tag v0.0.1
+git push
 ```
