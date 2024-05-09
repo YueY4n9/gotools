@@ -1,4 +1,4 @@
-module gotools
+module github.com/YueY4n9/gotools
 
 go 1.20
 
