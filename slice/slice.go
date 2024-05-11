@@ -38,3 +38,12 @@ func ToSet[T comparable](slice []T) map[T]struct{} {
 	}
 	return set
 }
+
+func IsExist[T comparable](slice []T, ele T) bool {
+	for _, e := range slice {
+		if e == ele {
+			return true
+		}
+	}
+	return false
+}
