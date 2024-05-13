@@ -27,3 +27,8 @@ func chinese2Pinyin(s string) string {
 	pinyinList := gopinyin.LazyPinyin(s, gopinyin.NewArgs())
 	return strings.Join(pinyinList, "")
 }
+
+func VerifyEmailFormat(address string) bool {
+	re := regexp.MustCompile(`^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$`)
+	return re.MatchString(address)
+}

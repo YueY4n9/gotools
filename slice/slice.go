@@ -47,3 +47,30 @@ func IsExist[T comparable](slice []T, ele T) bool {
 	}
 	return false
 }
+
+func Equal[T comparable](slice1, slice2 []T) bool {
+	if len(slice1) != len(slice2) {
+		return false
+	}
+	for i := 0; i < len(slice1); i++ {
+		if slice1[i] != slice2[i] {
+			return false
+		}
+	}
+	return true
+}
+
+// Subtract return new(slice1 - slice2)
+func Subtract[T comparable](slice1, slice2 []T) []T {
+	res := make([]T, 0)
+	m := make(map[T]bool)
+	for _, e := range slice2 {
+		m[e] = true
+	}
+	for _, e := range slice1 {
+		if !m[e] {
+			res = append(res, e)
+		}
+	}
+	return res
+}
