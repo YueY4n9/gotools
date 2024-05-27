@@ -26,3 +26,14 @@ func Merge[K comparable, V any](m1, m2 map[K]V) map[K]V {
 	}
 	return m
 }
+
+// Intersect 取交集
+func Intersect[K comparable, V any](m1, m2 map[K]V) map[K]V {
+	intersection := make(map[K]V)
+	for k1 := range m1 {
+		if v2, ok := m2[k1]; ok {
+			intersection[k1] = v2
+		}
+	}
+	return intersection
+}

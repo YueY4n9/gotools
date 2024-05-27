@@ -74,3 +74,18 @@ func Subtract[T comparable](slice1, slice2 []T) []T {
 	}
 	return res
 }
+
+// Intersect 取交集
+func Intersect[T comparable](slice1, slice2 []T) []T {
+	hashSet := make(map[T]bool)
+	res := make([]T, 0)
+	for _, v := range slice1 {
+		hashSet[v] = true
+	}
+	for _, v := range slice2 {
+		if hashSet[v] {
+			res = append(res, v)
+		}
+	}
+	return res
+}
