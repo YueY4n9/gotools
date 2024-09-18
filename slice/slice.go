@@ -89,3 +89,10 @@ func Intersect[T comparable](slice1, slice2 []T) []T {
 	}
 	return res
 }
+
+// Reverse 反转切片
+func Reverse[S ~[]E, E any](s S) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+}
