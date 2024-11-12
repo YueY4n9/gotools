@@ -37,3 +37,14 @@ func Intersect[K comparable, V any](m1, m2 map[K]V) map[K]V {
 	}
 	return intersection
 }
+
+// Difference 取差集
+func Difference[K comparable, V any](m1, m2 map[K]V) map[K]V {
+	difference := make(map[K]V)
+	for k, v := range m1 {
+		if _, ok := m2[k]; !ok {
+			difference[k] = v
+		}
+	}
+	return difference
+}
